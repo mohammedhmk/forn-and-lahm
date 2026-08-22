@@ -19,11 +19,17 @@ function trackSnapEvent(eventName: string, params?: Record<string, unknown>): vo
   }
 }
 
-// استخدام الأحداث المخصصة الرسمية للسناب شات مع تمرير المتغيرات
+// استخدام الأحداث المخصصة الرسمية للسناب شات مع تمرير المتغيرات القياسية
 export function trackCallClick(): void {
-  trackSnapEvent("CUSTOM_EVENT_1", { event_tag: "call_click" });
+  trackSnapEvent("CUSTOM_EVENT_1", {
+    description: "call_click",
+    item_category: "contact",
+  });
 }
 
 export function trackDirectionsClick(): void {
-  trackSnapEvent("CUSTOM_EVENT_2", { event_tag: "directions_click" });
+  trackSnapEvent("CUSTOM_EVENT_2", {
+    description: "directions_click",
+    item_category: "directions",
+  });
 }

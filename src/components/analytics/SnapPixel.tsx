@@ -4,7 +4,7 @@ import Script from "next/script";
 
 // TODO: أضف معرّف البكسل الحقيقي من Snapchat Ads Manager في NEXT_PUBLIC_SNAP_PIXEL_ID
 // (راجع .env.example). بدون هذا المتغيّر لا يُحمَّل أي سكربت إطلاقًا.
-const PIXEL_ID = process.env.NEXT_PUBLIC_SNAP_PIXEL_ID;
+const PIXEL_ID = process.env.NEXT_PUBLIC_SNAP_PIXEL_ID || "47df8139-a89b-4b36-a004-3efd6d22db54";
 
 export function SnapPixel() {
   if (!PIXEL_ID) return null;
