@@ -19,17 +19,16 @@ function trackSnapEvent(eventName: string, params?: Record<string, unknown>): vo
   }
 }
 
-// استخدام الأحداث المخصصة الرسمية للسناب شات مع تمرير المتغيرات القياسية
+// تتبع حدث الاتصال كحدث قياسي "RESERVE" (حجز)
 export function trackCallClick(): void {
-  trackSnapEvent("CUSTOM_EVENT_1", {
-    description: "call_click",
-    item_category: "contact",
+  trackSnapEvent("RESERVE", {
+    description: "حجز عبر الاتصال",
   });
 }
 
+// تتبع حدث الاتجاهات كحدث قياسي "SIGN_UP" (تسجيل / اشتراك)
 export function trackDirectionsClick(): void {
-  trackSnapEvent("CUSTOM_EVENT_2", {
-    description: "directions_click",
-    item_category: "directions",
+  trackSnapEvent("SIGN_UP", {
+    description: "طلب الاتجاهات والخريطة",
   });
 }
