@@ -13,18 +13,17 @@ function trackSnapEvent(eventName: string, params?: Record<string, unknown>): vo
   if (typeof window === "undefined") return;
   if (typeof window.snaptr !== "function") return;
   try {
-    window.snaptr("track", "CUSTOM_EVENT", { event_name: eventName, ...params });
+    window.snaptr("track", eventName, params);
   } catch {
     // تجاهل أي خطأ من السكربت الخارجي — التتبع لا يجب أن يكسر الموقع أبدًا
   }
 }
 
-// TODO: راجع تسمية هذين الحدثين مع إعدادات Custom Events الفعلية في
-// Snapchat Ads Manager بعد ربط معرّف البكسل الحقيقي، وعدّلها إن لزم.
+// استخدام الأحداث المخصصة الرسمية للسناب شات مع تمرير المتغيرات
 export function trackCallClick(): void {
-  trackSnapEvent("call_click");
+  trackSnapEvent("CUSTOM_EVENT_1", { event_tag: "call_click" });
 }
 
 export function trackDirectionsClick(): void {
-  trackSnapEvent("directions_click");
+  trackSnapEvent("CUSTOM_EVENT_2", { event_tag: "directions_click" });
 }
