@@ -29,15 +29,15 @@ export function Hero() {
         </p>
 
         {/* بانر العرض — نفس التصميم المستخدم في الحملة الإعلانية، يُعرض كاملاً بدون قص */}
-        <div className="w-[100vw] relative left-1/2 -translate-x-1/2 mb-10 animate-fade-in">
+        <div className="w-full max-w-3xl mb-7 animate-fade-in">
           <Image
             src="/images/hero_promo.webp"
             alt="عرض خصم 25% على الفطاير والبيتزا لمدة 3 أيام فقط - فرن ولحم"
             width={1672}
             height={941}
             priority
-            sizes="100vw"
-            className="w-full h-auto"
+            sizes="(max-width: 768px) 100vw, 900px"
+            className="w-full h-auto rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           />
         </div>
 
