@@ -1,6 +1,7 @@
 import { SectionHeader } from "../ui/SectionHeader";
 import { Star, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { GOOGLE_RATING } from "@/data/site";
 
 const REVIEWS = [
   {
@@ -46,10 +47,18 @@ export function ReviewsSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <SectionHeader 
-          title="ماذا يقول عملاؤنا" 
+        <SectionHeader
+          title="ماذا يقول عملاؤنا"
           subtitle="آراء حقيقية من زبائننا، تعكس شغفنا بتقديم أفضل جودة وطعم"
         />
+
+        <div className="flex items-center justify-center gap-2 -mt-6 mb-10">
+          <div className="flex items-center gap-1 bg-white/[0.04] border border-white/10 rounded-full px-4 py-2">
+            <Star size={16} className="fill-amber-400 text-amber-400" />
+            <span className="font-bold text-textPrimary">{GOOGLE_RATING}</span>
+            <span className="text-textMutedSmall text-sm">تقييم Google الموثّق</span>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
           {REVIEWS.map((review) => (
@@ -92,15 +101,15 @@ export function ReviewsSection() {
               <div className="mt-auto pt-5 border-t border-white/5 relative z-10">
                 <div className="flex items-center justify-center gap-3">
                   <div className="flex flex-col items-center bg-white/[0.03] rounded-xl px-4 py-2.5 flex-1">
-                    <span className="text-[10px] text-white/30 font-medium mb-0.5">الطعام</span>
+                    <span className="text-[10px] text-textMutedSmall font-medium mb-0.5">الطعام</span>
                     <span className="font-bold text-primary text-sm">{review.food}</span>
                   </div>
                   <div className="flex flex-col items-center bg-white/[0.03] rounded-xl px-4 py-2.5 flex-1">
-                    <span className="text-[10px] text-white/30 font-medium mb-0.5">الخدمة</span>
+                    <span className="text-[10px] text-textMutedSmall font-medium mb-0.5">الخدمة</span>
                     <span className="font-bold text-primary text-sm">{review.service}</span>
                   </div>
                   <div className="flex flex-col items-center bg-white/[0.03] rounded-xl px-4 py-2.5 flex-1">
-                    <span className="text-[10px] text-white/30 font-medium mb-0.5">الأجواء</span>
+                    <span className="text-[10px] text-textMutedSmall font-medium mb-0.5">الأجواء</span>
                     <span className="font-bold text-primary text-sm">{review.atmosphere}</span>
                   </div>
                 </div>

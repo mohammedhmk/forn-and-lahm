@@ -17,6 +17,7 @@ const config: Config = {
         accent: 'var(--accent)',
         textPrimary: 'var(--text-primary)',
         textMuted: 'var(--text-muted)',
+        textMutedSmall: 'var(--text-muted-small)',
         gold: 'var(--gold)',
         border: 'var(--border)',
       },

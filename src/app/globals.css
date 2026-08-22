@@ -4,20 +4,21 @@
 
 @layer base {
   :root {
-    --background: #0A0A0B;
-    --surface: #151517;
-    --surface-light: #1E1E22;
+    --background: #0F1012;
+    --surface: #1A1B1E;
+    --surface-light: #24252A;
     --primary: #E85A17;
-    --primary-hover: #FF6B2C;
+    --primary-hover: #B63D0F;
     --accent: #FF8A3D;
-    --text-primary: #F5F5F5;
-    --text-muted: #9CA3AF;
-    --gold: #D4A853;
+    --text-primary: #F4EEDA;
+    --text-muted: #6D6E71;
+    --text-muted-small: #8A8B8E;
+    --gold: #B97A3D;
     --border: rgba(255, 255, 255, 0.08);
-    
-    --gradient-flame: linear-gradient(135deg, #E85A17 0%, #FF8A3D 50%, #D4A853 100%);
-    --gradient-copper: linear-gradient(180deg, #B97A3D 0%, #D4A853 100%);
-    --gradient-dark: linear-gradient(180deg, #0A0A0B 0%, #151517 100%);
+
+    --gradient-flame: linear-gradient(180deg, #E85A17 0%, #0F1012 100%);
+    --gradient-copper: linear-gradient(180deg, #B97A3D 0%, #0F1012 100%);
+    --gradient-dark: linear-gradient(180deg, #0F1012 0%, #1A1B1E 100%);
   }
 }
 
@@ -137,6 +138,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* احترام تفضيل تقليل الحركة — إلزامي (CLAUDE.md قسم 17/20) */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-glow,
+  .animate-pulse-soft {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Gradient border */

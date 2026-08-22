@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DirectionsLink } from "../ui/TrackedLinks";
+import { MAPS_DIRECTIONS_URL } from "@/data/site";
 
 export function FloatingOrderButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,8 +19,10 @@ export function FloatingOrderButton() {
   }, []);
 
   return (
-    <a
-      href="tel:0556109892"
+    <DirectionsLink
+      href={MAPS_DIRECTIONS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "fixed bottom-6 left-1/2 -translate-x-1/2 z-40 md:hidden",
         "bg-primary hover:bg-primaryHover text-white font-bold py-3.5 px-8 rounded-full",
@@ -28,8 +32,8 @@ export function FloatingOrderButton() {
         isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
       )}
     >
-      <Phone size={18} />
-      <span>اطلب الآن</span>
-    </a>
+      <MapPin size={18} />
+      <span>الاتجاهات</span>
+    </DirectionsLink>
   );
 }
