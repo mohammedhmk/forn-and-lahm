@@ -20,8 +20,8 @@ export function Hero() {
 
   return (
     <section className="relative bg-background pt-28 pb-14 md:pt-36 md:pb-20 overflow-hidden">
-      {/* توهج خلفي خفيف */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] h-[30vh] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* توهج خلفي خفيف (تم استبدال الـ blur بـ radial-gradient لتحسين الأداء على الجوال) */}
+      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[80vw] h-[40vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-primary/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         <p className="text-sm md:text-base font-semibold text-gold tracking-wide mb-5 animate-fade-in">

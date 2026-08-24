@@ -14,8 +14,8 @@ import { MapEmbed } from "./MapEmbed";
 export function LocationContact() {
   return (
     <section className="py-16 md:py-24 bg-surface relative" id="contact">
-      {/* Decorative */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Decorative (تم استبدال الـ blur بـ radial-gradient) */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 to-transparent pointer-events-none"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <SectionHeader
