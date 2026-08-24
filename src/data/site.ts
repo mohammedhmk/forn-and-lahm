@@ -12,7 +12,7 @@ export const INSTAGRAM_URL = "https://instagram.com/fornlahem";
 
 // عنوان تفصيلي حقيقي — مؤكَّد مباشرة من صفحة العمل التجاري الرسمية على خرائط جوجل
 export const ADDRESS_TEXT = "شارع الأمير عبدالله بن سعود، الصحافة، الرياض 51621";
-export const NEIGHBORHOOD_TEXT = "حي الصفاحة – الرياض";
+export const NEIGHBORHOOD_TEXT = "حي الصحافة – الرياض";
 
 // تم التحقق من هذا الرابط فعليًا (يقود لموقع Google Business حقيقي باسم "فرن ولحم")
 export const MAPS_DIRECTIONS_URL = "https://maps.app.goo.gl/TiG8Yi5rp3Kgt3Mx9";
@@ -28,4 +28,4 @@ export const GOOGLE_RATING = 4.8;
 export const PROMO_DISCOUNT_LABEL = "خصم 25%";
 export const PROMO_ITEMS_LABEL = "فطاير وبيتزا";
 export const PROMO_START_ISO = "2026-08-24T04:00:00+03:00";
-export const PROMO_END_ISO = "2026-08-27T04:00:00+03:00";
+export const PROMO_END_ISO = "2026-08-28T03:00:00+03:00";

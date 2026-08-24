@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ADDRESS_TEXT,
   INSTAGRAM_HANDLE,
@@ -14,9 +15,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/images/logo.png"
+              <Image
+                src="/images/logo-optimized.webp"
                 alt="شعار فرن ولحم"
+                width={112}
+                height={112}
+                loading="lazy"
                 className="w-14 h-14 object-contain"
               />
             </div>

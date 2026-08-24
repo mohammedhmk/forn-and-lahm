@@ -4,12 +4,12 @@ import { Button } from "../ui/Button";
 import {
   ADDRESS_TEXT,
   MAPS_DIRECTIONS_URL,
-  MAPS_EMBED_SRC,
   PHONE_DISPLAY,
   PHONE_TEL_HREF,
   WHATSAPP_HREF,
 } from "@/data/site";
 import { CallLink, DirectionsLink } from "../ui/TrackedLinks";
+import { MapEmbed } from "./MapEmbed";
 
 export function LocationContact() {
   return (
@@ -90,19 +90,9 @@ export function LocationContact() {
             </div>
           </div>
 
-          {/* Google Maps Embed — إحداثيات حقيقية موثّقة */}
+          {/* خريطة جوجل — لا تُحمَّل فعليًا إلا بعد ضغط المستخدم (أثقل عنصر على الجوال) */}
           <div className="glass-light rounded-3xl overflow-hidden gradient-border min-h-[400px]">
-            <iframe
-              src={MAPS_EMBED_SRC}
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "400px" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="موقع فرن ولحم على الخريطة"
-              className="w-full h-full"
-            />
+            <MapEmbed />
           </div>
         </div>
       </div>

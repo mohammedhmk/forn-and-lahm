@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "../ui/Button";
@@ -31,9 +32,12 @@ export function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src="/images/logo.png"
+          <Image
+            src="/images/logo-optimized.webp"
             alt="شعار فرن ولحم"
+            width={96}
+            height={96}
+            priority
             className={cn(
               "object-contain transition-all duration-300",
               isScrolled ? "w-10 h-10" : "w-12 h-12"

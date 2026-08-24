@@ -117,11 +117,14 @@
   animation: pulse-soft 3s ease-in-out infinite;
 }
 
-/* Glass effect utility */
+/* Glass effect utility — blur مخفَّض عمدًا (كان 20px): هذا الكلاس يُستخدم على
+   الـ Navbar الثابت الذي يُعاد رسمه أثناء كل تمرير (scroll)، وbackdrop-filter
+   من أثقل خصائص CSS على معالجات الجوال متوسطة الأداء. عوّضنا بخلفية أعتم
+   قليلاً بدل زيادة الـ blur، فيبقى المظهر "الزجاجي" مع تكلفة أداء أقل بكثير. */
 .glass {
-  background: rgba(21, 21, 23, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(21, 21, 23, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
