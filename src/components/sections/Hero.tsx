@@ -19,47 +19,45 @@ export function Hero() {
   const { phase, remainingMs } = usePromoCountdown(PROMO_START_ISO, PROMO_END_ISO);
 
   return (
-    <section className="relative bg-background pt-28 pb-14 md:pt-36 md:pb-20 overflow-hidden">
-      {/* توهج خلفي خفيف (تم استبدال الـ blur بـ radial-gradient لتحسين الأداء على الجوال) */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[80vw] h-[40vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-primary/5 to-transparent pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[85vh]">
+      {/* صورة الخلفية مع Overlay احترافية */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero_bg_new.jpg"
+          alt="فرن ولحم - مخبوزات طازجة من الفرن"
+          fill
+          priority
+          className="object-cover object-center"
+          quality={90}
+        />
+        {/* تدرج لوني داكن لدمج الصورة مع خلفية الموقع وجعل النصوص مقروءة */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-black/40" />
+      </div>
 
-      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
-        <p className="text-sm md:text-base font-semibold text-gold tracking-wide mb-5 animate-fade-in">
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-10">
+        <p className="text-sm md:text-base font-semibold text-gold tracking-wide mb-5 animate-fade-in drop-shadow-lg">
           فرن ولحم · {NEIGHBORHOOD_TEXT}
         </p>
 
-        {/* بانر العرض — نفس التصميم المستخدم في الحملة الإعلانية، يُعرض كاملاً بدون قص */}
-        <div className="w-full max-w-3xl mb-7 animate-fade-in">
-          <Image
-            src="/images/hero_promo.webp"
-            alt="عرض خصم 25% على الفطاير والبيتزا لمدة 3 أيام فقط - فرن ولحم"
-            width={1672}
-            height={941}
-            priority
-            sizes="(max-width: 768px) 100vw, 900px"
-            className="w-full h-auto rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
-          />
-        </div>
-
         {phase === "active" && (
-          <div className="mb-8 animate-fade-in-up">
-            <p className="text-sm text-textMutedSmall mb-3">ينتهي العرض خلال</p>
+          <div className="mb-8 animate-fade-in-up bg-black/20 backdrop-blur-md p-4 rounded-2xl border border-white/5 shadow-2xl">
+            <p className="text-sm text-gray-300 mb-3 font-medium">ينتهي العرض خلال</p>
             <CountdownDigits remainingMs={remainingMs} endISO={PROMO_END_ISO} />
           </div>
         )}
 
         <h1
-          className="text-[30px] md:text-[46px] font-extrabold leading-[1.15] mb-4 max-w-2xl text-textPrimary animate-fade-in-up"
+          className="text-[36px] md:text-[54px] font-extrabold leading-[1.15] mb-4 max-w-2xl text-white drop-shadow-xl animate-fade-in-up"
           style={{ animationDelay: "0.1s" }}
         >
-          خصم 25% على الفطاير والبيتزا
+          من الفرن حارة.. وتفتح النفس
         </h1>
 
         <p
-          className="text-[15px] md:text-lg text-textMutedSmall max-w-xl mb-10 leading-[1.7] font-medium animate-fade-in-up"
+          className="text-[16px] md:text-xl text-gray-200 max-w-xl mb-10 leading-[1.7] font-medium animate-fade-in-up drop-shadow-md"
           style={{ animationDelay: "0.2s" }}
         >
-          جذور في التراث، مصنوعة بشغف — نار حقيقية ونكهة نعيمي أصيلة، طازجة من الفرن كل يوم.
+          شغل على أصوله، نخبز لك فطاير وبيتزا بنكهة النعيمي الأصيلة.. طازجة ويوم بيومه.
         </p>
 
         <div
@@ -72,14 +70,14 @@ export function Hero() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto"
           >
-            <Button size="lg" className="w-full gap-3 text-lg animate-glow">
+            <Button size="lg" className="w-full gap-3 text-lg shadow-lg hover:shadow-xl transition-shadow bg-primary text-primary-foreground border-none">
               <MapPin size={22} />
               الاتجاهات
             </Button>
           </DirectionsLink>
 
           <CallLink href={PHONE_TEL_HREF} className="w-full sm:w-auto">
-            <Button variant="outline" size="lg" className="w-full gap-3 text-lg">
+            <Button size="lg" className="w-full gap-3 text-lg bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 text-white shadow-lg transition-all">
               <Phone size={22} />
               اتصل الآن
             </Button>
